@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.restcomm</groupId>
 		<artifactId>restcomm-parent</artifactId>
-		<version>4.1.0-17</version>
+		<version>3.0.7</version>
 	</parent>
 	
 	<groupId>org.restcomm.cluster</groupId>
@@ -26,6 +26,8 @@
 	<properties>
 		<jboss.cache.version>3.1.0.GA</jboss.cache.version>
 		<log4j.version>1.2.17</log4j.version>
+		<compile.source>1.8</compile.source>
+		<compile.debug>true</compile.debug>
 	</properties>
 
 	<dependencyManagement>
@@ -75,6 +77,19 @@
 	</profiles>
 	
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
